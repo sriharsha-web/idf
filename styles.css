@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(180deg, #E31E24 0%, #c41a1f 100%);
+    color: #333;
+    overflow-x: hidden;
+    max-width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Status Bar */
+.status-bar {
+    background: #000;
+    color: #fff;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.status-left, .status-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.signal {
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* Login Container */
+.login-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 24px 24px;
+    min-height: calc(100vh - 40px);
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+/* Login Header */
+.login-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-section {
+    margin-bottom: 16px;
+}
+
+.logo {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 4px;
+    margin-bottom: 4px;
+}
+
+.logo-subtitle {
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 500;
+    opacity: 0.95;
+}
+
+.tagline {
+    font-size: 13px;
+    color: #fff;
+    opacity: 0.9;
+    margin-top: 12px;
+    font-weight: 300;
+}
+
+/* Login Form */
+.login-form {
+    background: #fff;
+    border-radius: 20px;
+    padding: 32px 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    flex: 1;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.login-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.login-subtitle {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background: #fff;
+    color: #333;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #E31E24;
+}
+
+.password-input-wrapper {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 13px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: #666;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #E31E24;
+}
+
+.forgot-link {
+    color: #E31E24;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-link:active {
+    opacity: 0.8;
+}
+
+.login-btn {
+    width: 100%;
+    background: #E31E24;
+    color: #fff;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 24px;
+}
+
+.login-btn:active {
+    background: #c41a1f;
+}
+
+.register-section {
+    text-align: center;
+    padding-top: 24px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.register-section p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.register-link {
+    color: #E31E24;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.register-link:active {
+    opacity: 0.8;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.login-footer p {
+    font-size: 12px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+/* Modal */
+.modal-overlay {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(2px);
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 24px;
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+    animation: modalSlideUp 0.3s ease-out;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.modal-content h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.modal-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-primary {
+    background: #E31E24;
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: default;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.btn-primary:active {
+    background: #E31E24;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 32px 20px 20px;
+    }
+    
+    .login-form {
+        padding: 28px 20px;
+    }
+    
+    .logo {
+        font-size: 40px;
+    }
+    
+    .login-title {
+        font-size: 22px;
+    }
+}
+
+/* Prevent text selection on mobile */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+
+input, textarea {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+/* Safe area for notched devices */
+@supports (padding: max(0px)) {
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+    
+    .status-bar {
+        padding-top: max(8px, env(safe-area-inset-top));
+    }
+    
+    .login-container {
+        padding-bottom: max(24px, env(safe-area-inset-bottom));
+    }
+}

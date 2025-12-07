@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>IDFC First Bank - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Status Bar -->
+    <div class="status-bar">
+        <div class="status-left">
+            <span>VoLTE 4G</span>
+            <span class="signal">●●●</span>
+        </div>
+        <div class="status-right">
+            <span>99+</span>
+            <span class="wifi">📶</span>
+            <span id="time">11:01</span>
+        </div>
+    </div>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo-section">
+                <div class="logo">IDFC</div>
+                <div class="logo-subtitle">FIRST BANK</div>
+            </div>
+            <p class="tagline">Over 10 Million customers share the joy of banking</p>
+        </div>
+
+        <div class="login-form">
+            <h2 class="login-title">Welcome Back</h2>
+            <p class="login-subtitle">Sign in to continue</p>
+
+            <div class="form-group">
+                <label for="userId">User ID / Customer ID</label>
+                <input type="text" id="userId" placeholder="Enter your User ID" autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="password-input-wrapper">
+                    <input type="password" id="password" placeholder="Enter your password" autocomplete="off">
+                    <span class="password-toggle">👁️</span>
+                </div>
+            </div>
+
+            <div class="form-options">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="rememberMe">
+                    <span>Remember User ID</span>
+                </label>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+
+            <button class="login-btn" onclick="attemptLogin()">Login</button>
+
+            <div class="register-section">
+                <p>New to IDFC First Bank?</p>
+                <a href="#" class="register-link">Register Now</a>
+            </div>
+        </div>
+
+        <div class="login-footer">
+            <p>Secure Banking | 24/7 Support</p>
+        </div>
+    </div>
+
+    <!-- Version Incompatible Modal -->
+    <div class="modal-overlay show" id="versionModal">
+        <div class="modal-content">
+            <div class="modal-icon">⚠️</div>
+            <h2>Version Incompatible</h2>
+            <p>You can't use app with this mobile version. Please update to a newer version of OS to enjoy app benefits.</p>
+            <div class="modal-buttons">
+                <button class="btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
